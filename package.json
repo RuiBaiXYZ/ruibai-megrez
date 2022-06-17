@@ -1,37 +1,19 @@
 {
-  "name": "Pencil",
+  "name": "ruibai-megrez",
   "devDependencies": {
-    "electron": "15.2.0",
-    "electron-builder": "20.28.4",
-    "electron-rebuild": "^1.8.5",
-    "rimraf": "^2.5.4"
+    "electron": "16.0.5",
+    "electron-builder": "22.14.5",
+    "electron-rebuild": "^3.2.7",
+    "rimraf": "^3.0.2"
   },
   "build": {
-    "appId": "vn.evolus.pencil",
-    "productName": "Pencil",
-    "copyright": "Copyright © 2008-2016 Evolus. All rights reserved.",
-    "mac": {
-      "category": "public.app-category.graphics-design"
-    },
-    "dmg": {
-      "contents": [
-        {
-          "x": 356,
-          "y": 140,
-          "type": "link",
-          "path": "/Applications"
-        },
-        {
-          "x": 130,
-          "y": 145,
-          "type": "file"
-        }
-      ]
-    },
+    "appId": "xyz.ruibai.megrez",
+    "productName": "RuiBai Megrez",
+    "copyright": "Copyright © 2008-2022 Evolus. Copyright © 2022 RuiBai. All rights reserved.",
     "linux": {
       "description": "An open-source GUI prototyping tool that is available for ALL platforms.",
       "synopsis": "An open-source GUI prototyping tool that is available for ALL platforms.",
-      "maintainer": "Nguyen Tien Dzung <ngtdungnt@gmail.com>",
+      "maintainer": "yakebao <yakebao@gmail.com>",
       "vendor": "Evolus",
       "target": [
         "deb",
@@ -46,7 +28,7 @@
       "authors": "Evolus",
       "owners": "Evolus",
       "description": "An open-source GUI prototyping tool that is available for ALL platforms.",
-      "copyright": "Copyright © 2008-2016 Evolus. All rights reserved.",
+      "copyright": "Copyright © 2008-2022 Evolus. Copyright © 2022 RuiBai. All rights reserved.",
       "iconUrl": "https://raw.githubusercontent.com/evolus/pencil/master/build/icon.ico",
       "target": "nsis"
     },
@@ -78,8 +60,7 @@
     "dist": "build",
     "release": "build",
     "dist:linux": "./node_modules/.bin/build --linux --ia32 --x64",
-    "dist:win32": "./node_modules/.bin/build --windows --ia32 --x64",
-    "dist:osx": "./node_modules/.bin/build --macos"
+    "dist:win32": "./node_modules/.bin/build --windows --ia32 --x64"
   },
   "private": true,
   "dependencies": {
