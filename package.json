@@ -1,9 +1,9 @@
 {
   "name": "ruibai-megrez",
   "devDependencies": {
-    "electron": "16.0.5",
-    "electron-builder": "22.14.5",
-    "electron-rebuild": "^3.2.7",
+    "electron": "19.0.8",
+    "electron-builder": "23.1.0",
+    "electron-rebuild": "^3.2.8",
     "rimraf": "^3.0.2"
   },
   "build": {
@@ -14,7 +14,7 @@
       "description": "An open-source GUI prototyping tool that is available for ALL platforms.",
       "synopsis": "An open-source GUI prototyping tool that is available for ALL platforms.",
       "maintainer": "yakebao <yakebao@gmail.com>",
-      "vendor": "Evolus",
+      "vendor": "RuiBai",
       "target": [
         "deb",
         "rpm",
@@ -23,14 +23,6 @@
       "depends": [],
       "category": "Graphics",
       "packageCategory": "graphics"
-    },
-    "win": {
-      "authors": "Evolus",
-      "owners": "Evolus",
-      "description": "An open-source GUI prototyping tool that is available for ALL platforms.",
-      "copyright": "Copyright © 2008-2022 Evolus. Copyright © 2022 RuiBai. All rights reserved.",
-      "iconUrl": "https://raw.githubusercontent.com/evolus/pencil/master/build/icon.ico",
-      "target": "nsis"
     },
     "nsis": {
       "oneClick": false,
@@ -46,7 +38,7 @@
         "epz",
         "epgz"
       ],
-      "name": "Pencil Document"
+      "name": "RuiBai Megrez Document"
     }
   },
   "scripts": {
@@ -59,11 +51,12 @@
     "pack": "build",
     "dist": "build",
     "release": "build",
-    "dist:linux": "./node_modules/.bin/build --linux --ia32 --x64",
-    "dist:win32": "./node_modules/.bin/build --windows --ia32 --x64"
+    "dist:linux": "./node_modules/.bin/build --linux --x64",
+    "dist:win32": "./node_modules/.bin/build --windows --ia32 --x64",
+    "dist:osx": "./node_modules/.bin/build --macos"
   },
   "private": true,
   "dependencies": {
-    "@electron/remote": "^2.0.1"
+    "@electron/remote": "^2.0.8"
   }
 }
