@@ -59,8 +59,5 @@
     "tar.gz": "https://github.com/dgthanhan/node-tar.gz/archive/e1a5ee27a620aa1bc1a421a8d797c843609e88eb.tar.gz",
     "tmp": "0.2.1"
   },
-  "private": true,
-  "devDependencies": {
-    "electron-rebuild": "^3.2.8"
-  }
+  "private": true
 }

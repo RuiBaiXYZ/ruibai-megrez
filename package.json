@@ -3,7 +3,6 @@
   "devDependencies": {
     "electron": "19.0.8",
     "electron-builder": "23.1.0",
-    "electron-rebuild": "^3.2.8",
     "rimraf": "^3.0.2"
   },
   "build": {
@@ -16,18 +15,11 @@
       "maintainer": "yakebao <yakebao@gmail.com>",
       "vendor": "RuiBai",
       "target": [
-        "deb",
         "rpm",
         "tar.gz"
       ],
-      "depends": [],
       "category": "Graphics",
       "packageCategory": "graphics"
-    },
-    "nsis": {
-      "oneClick": false,
-      "perMachine": true,
-      "allowToChangeInstallationDirectory": true
     },
     "electronDownload": {
       "cache": ".electron-cache"
@@ -42,7 +34,7 @@
     }
   },
   "scripts": {
-    "postinstall": "install-app-deps",
+    "postinstall": "electron-builder install-app-deps",
     "install-app-deps": "node ./node_modules/electron-builder/out/install-app-deps.js",
     "start": "./node_modules/.bin/electron ./app",
     "start:dev": "./node_modules/.bin/electron ./app --enable-dev --enable-transparent-visuals",
@@ -51,9 +43,9 @@
     "pack": "build",
     "dist": "build",
     "release": "build",
-    "dist:linux": "./node_modules/.bin/build --linux --x64",
-    "dist:win32": "./node_modules/.bin/build --windows --ia32 --x64",
-    "dist:osx": "./node_modules/.bin/build --macos"
+    "dist:linux": "./node_modules/.bin/electron-builder --linux --x64",
+    "dist:win32": "./node_modules/.bin/electron-builder --windows --x64",
+    "dist:osx": "./node_modules/.bin/electron-builder --macos"
   },
   "private": true,
   "dependencies": {

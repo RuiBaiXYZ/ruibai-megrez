@@ -14,4 +14,4 @@ dnf -y install GConf2 GConf2-devel
 
 
 ### build
-npm run dist:linux
+rm -Rf node_modules/ package-lock.json && npm install && npm run postinstall && npm run dist:linux
