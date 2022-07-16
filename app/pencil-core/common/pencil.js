@@ -10,8 +10,8 @@ var Pencil = {};
 
 pencilSandbox.Pencil = Pencil;
 
-Pencil.SNAP = 10;
-Pencil.UNSNAP = 10;
+Pencil.SNAP = 5;
+Pencil.UNSNAP = 5;
 Pencil.editorClasses = [];
 Pencil.registerEditor = function (editorClass) {
     Pencil.editorClasses.push(editorClass);
@@ -81,7 +81,7 @@ Pencil.boot = function (event) {
         if (Pencil.booted) return;
         debug("BOOT: Initializing Pencil core");
 
-        Pencil.app = require('electron').remote.app;
+        Pencil.app = require('@electron/remote').app;
 
         Pencil.booted = true;
         Pencil.window = document.documentElement;
@@ -178,12 +178,19 @@ Pencil.boot = function (event) {
     }
 };
 Pencil.handleArguments = function() {
-	var remote = require('electron').remote;
 	var appArguments = remote.getGlobal('sharedObject').appArguments;
+    console.log("appArguments", appArguments);
 	if (appArguments && appArguments.length > 1) {
-        var arg = appArguments[1];
-        if (arg != "app" && arg != "./app") {
-            Pencil.documentHandler.loadDocumentFromArguments(arg);
+        var filePath = null;
+        for (var i = 1; i < appArguments.length; i ++) {
+            var arg = appArguments[i];
+            if (arg.match(/^.*\.(ep|epgz|png|jpg|jpeg|gif|bmp)$/)) {
+                filePath = arg;
+                break;
+            }
+        }
+        if (filePath) {
+            Pencil.documentHandler.loadDocumentFromArguments(filePath);
         }
 	}
 };
